@@ -10,6 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import { GlowCard } from "@/components/glow-card";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
@@ -17,30 +18,44 @@ export default function Experience() {
 
   return (
     <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <React.Fragment key={index}>
-            <VerticalTimelineElement
-              contentStyle={{
-                
-                boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
-                textAlign: "left",
-                padding: "1.3rem 2rem",
-              }}
-              date={item.date}
-              icon={item.icon}
-            >
-              <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item.description}
-              </p>
-            </VerticalTimelineElement>
-          </React.Fragment>
-        ))}
-      </VerticalTimeline>
+            <SectionHeading>My experience</SectionHeading>
+<VerticalTimeline
+  className={theme === "dark" ? "vertical-timeline--dark" : ""}
+  lineColor={theme === "dark" ? "#ffffff" : "#000000"} // White for dark mode, black for light mode
+>
+  {experiencesData.map((item, index) => (
+    <React.Fragment key={index}>
+      <VerticalTimelineElement
+        contentStyle={{
+          background: theme === "dark" ? "#333" : "#f9f9f9",
+          color: theme === "dark" ? "#fff" : "#000",
+          boxShadow: "none",
+          textAlign: "left",
+          padding: 0, // Remove padding to ensure GlowCard fills the element
+        }}
+        contentArrowStyle={{
+          borderRight: theme === "dark" ? "7px solid #555" : "7px solid #f9f9f9",
+        }}
+        date={item.date}
+        icon={item.icon}
+      >
+        {/* Apply Glow Effect to the entire content */}
+        <GlowCard className="p-6">
+          <h3 className="font-semibold capitalize text-black dark:text-white">
+            {item.title}
+          </h3>
+          <p className="font-normal !mt-0 text-gray-700 dark:text-gray-300">
+            {item.location}
+          </p>
+          <p className="!mt-1 !font-normal text-gray-700 dark:text-gray-300">
+            {item.description}
+          </p>
+        </GlowCard>
+      </VerticalTimelineElement>
+    </React.Fragment>
+  ))}
+</VerticalTimeline>
+
     </section>
   );
 }
