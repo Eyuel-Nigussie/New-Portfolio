@@ -42,7 +42,7 @@ export default function About() {
       <div className="relative w-full sm:w-1/2 flex justify-center">
         <Image
           src="/Eyuel.png"
-          alt="Eyuel's portrait"
+          alt="Eyuel's Portrait"
           width={500}
           height={500}
           className="justify-self-center rounded-2xl shadow-lg object-cover w-[80%] sm:w-[90%] max-w-md"

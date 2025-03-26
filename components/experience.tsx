@@ -17,11 +17,16 @@ export default function Experience() {
   const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-            <SectionHeading>My experience</SectionHeading>
+    <section
+     ref={ref}
+    className="scroll-mt-28 mb-28 sm:mb-40 py-20"
+    id="experience"
+  >
+    
+<h1 className="text-5xl font-bold mb-2"> MY EXPERIENCE </h1>
 <VerticalTimeline
   className={theme === "dark" ? "vertical-timeline--dark" : ""}
-  lineColor={theme === "dark" ? "#ffffff" : "#000000"} // White for dark mode, black for light mode
+  lineColor={theme === "dark" ? "#333" : "#000000"} // White for dark mode, black for light mode
 >
   {experiencesData.map((item, index) => (
     <React.Fragment key={index}>

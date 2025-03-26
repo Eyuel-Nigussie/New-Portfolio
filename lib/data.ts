@@ -5,6 +5,7 @@ import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "@/public/corpcomment.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
+import { DiJavascript1, DiJavascript } from 'react-icons/di'; // Vue.js logo icon
 
 export const links = [
   {
@@ -35,28 +36,36 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Bachelor of Science in Computer Science",
+    location: "Addis Ababa, Ethiopia",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Earned a BSc in Computer Science, mastering algorithms, data structures, and system design. Applied this foundation through hands-on projects to develop strong problem-solving skills for real-world software development challenges.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2021",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Front-End Developer @ SupportEducation",
+    location: "Addis Ababa, Ethiopia",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+      "Developed Vue.js/Quasar e-learning platforms and a School Information Management System (SIMS) at SupportEducation. Streamlined state management with Pinia, added animations via Motion One, and collaborated in an agile remote team to deliver features efficiently.",
+    icon: React.createElement(DiJavascript1),
+    date: "2022 - 2023",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Front-End Developer @ Loga Meter Taxi",
+    location: "Addis Ababa",
+    description:
+      "As a Front-End Developer 2021at Loga Meter Taxi, I designed and developed user interfaces for a taxi-hailing app using React, Next.js, and SvelteKit. I enhanced the UX with dynamic animations using Framer Motion, managed application state efficiently with Redux, and collaborated with backend teams to integrate APIs, ensuring seamless functionality and a polished user experience.",
+    icon: React.createElement(DiJavascript),
+    date: "2021 - 2023",
+  },
+  {
+    title: "Full-Stack Software Engineer @ Amref Health Africa",
+    location: "Addis Ababa, Ethiopia & Nairobi, Kenya",
     description:
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2023 - present",
   },
 ] as const;
 
