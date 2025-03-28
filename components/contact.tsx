@@ -1,74 +1,107 @@
 "use client";
 
+import { useState } from 'react';
+import { Send, Instagram, Linkedin, MessageSquare } from 'lucide-react';
 import React from "react";
-import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
+import Rive from '@rive-app/react-canvas';
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const [hoveredEmail, setHoveredEmail] = useState(false);
+  const [hoveredUsername, setHoveredUsername] = useState(false);
 
   return (
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      className="w-ful h-[80vh] text-center z-20 px-2 sm:px-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      <div className="w-full h-[50vh] z-20">
+          <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 justify-self-start">Contact Me</h1>
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
-        </a>{" "}
-        or through this form.
-      </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center w-full h-full gap-12">
+            {/* Left Section */}
+            <div className="flex-1 flex flex-col items-center sm:items-start px-4 sm:px-8 text-center sm:text-left">
+                {/* Username */}
+                <motion.a
+                  href="https://t.me/eyuel_31"
+                  className="mb-6 cursor-pointer"
+                  onHoverStart={() => setHoveredUsername(true)}
+                  onHoverEnd={() => setHoveredUsername(false)}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="flex items-center gap-3 text-3xl sm:text-6xl font-light">
+                    @eyuel_31
+                    <motion.div animate={{ rotate: hoveredUsername ? 45 : 0 }} transition={{ duration: 0.3 }}>
+                      <Send className="w-6 h-6 sm:w-12 sm:h-12 opacity-60" />
+                    </motion.div>
+                  </div>
+                </motion.a>
 
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
+                {/* Email */}
+                <motion.a
+                  href="mailto:eyuelnigussie@gmail.com"
+                  className="mb-6 cursor-pointer"
+                  onHoverStart={() => setHoveredEmail(true)}
+                  onHoverEnd={() => setHoveredEmail(false)}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="flex items-center gap-3 text-2xl sm:text-6xl font-light break-words">
+                    Gmail@eyuelnigussie.com
+                    <motion.div animate={{ y: hoveredEmail ? -10 : 0 }} transition={{ duration: 0.3 }}>
+                      <MessageSquare className="w-6 h-6 sm:w-12 sm:h-12 opacity-60" />
+                    </motion.div>
+                  </div>
+                </motion.a>
 
-          if (error) {
-            toast.error(error);
-            return;
-          }
+                {/* Social Links */}
+                <div className="space-y-6">
+                  <h3 className="text-lg sm:text-2xl text-gray-400">Follow me</h3>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <motion.a href="https://www.instagram.com/eyuelnigussie/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg sm:text-xl hover:text-white transition-colors" whileHover={{ x: 5 }}>
+                      <Instagram className="w-5 h-5 sm:w-6 sm:h-6" /> Instagram
+                    </motion.a>
+                    <motion.a href="https://www.linkedin.com/in/eyuel-nigussie-0a0b8a251/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg sm:text-xl hover:text-white transition-colors" whileHover={{ x: 5 }}>
+                      <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" /> LinkedIn
+                    </motion.a>
+                    <motion.a href="https://t.me/eyuel_31" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg sm:text-xl hover:text-white transition-colors" whileHover={{ x: 5 }}>
+                      <Send className="w-5 h-5 sm:w-6 sm:h-6" /> Telegram
+                    </motion.a>
+                  </div>
+                </div>
 
-          toast.success("Email sent successfully!");
-        }}
-      >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
-          placeholder="Your message"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
+                {/* Tagline */}
+                <motion.p className="mt-8 text-base sm:text-xl text-gray-400 text-center sm:text-left" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                  Turning ideas into interactive, seamless digital experiences that captivate & engage users.🧑‍💻
+                </motion.p>
+              </div>
+
+                {/* Right Side - Rive Animation */}
+                  <motion.div 
+                    className="relative h-[600px] w-full rounded-2xl overflow-hidden"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <Rive 
+                      src="/robot.riv"
+                      stateMachines="State Machine 1"
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                    {/* Gradient Overlay */}
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" /> */}
+                  </motion.div>
+           </div>
+
+          {/* Copyright */}
+          <p className="text-xs sm:text-sm text-white/70">Copyright © {new Date().getFullYear()} Eyuel Nigussie 👑</p>
+      </div>
     </motion.section>
   );
 }
