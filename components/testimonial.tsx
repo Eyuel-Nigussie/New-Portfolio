@@ -58,7 +58,7 @@ export default function Testimonials() {
 
           <div className="w-full max-w-4xl flex justify-center gap-8 overflow-hidden">
             <AnimatePresence mode="wait">
-                {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, index) => (
+                {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial) => (
                 <motion.div
                   key={testimonial.author}
                   initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function Testimonials() {
                   className="w-[45%] flex flex-col space-y-6 bg-card p-6 rounded-lg shadow-lg"
                 >
                   <p className="text-xl leading-relaxed text-muted-foreground italic">
-                    "{testimonial.text}"
+                    {testimonial.text}
                   </p>
                   <div className="flex items-center space-x-4">
                     <Image
