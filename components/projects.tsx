@@ -61,7 +61,7 @@ export default function Projects() {
           style={{ x }}
           className="flex gap-8 px-12 min-w-max"
         >
-         <div className="flex-shrink-0 w-[300px] sm:w-[900px] h-[90vh] px-4 sm:px-35 flex flex-col justify-center">
+         <div className="flex-shrink-0 w-[300px] sm:w-[900px] h-[60vh] sm:h-[90vh]  px-4 sm:px-35 flex flex-col justify-center">
           <p className="text-white/60">
              Here I showcase some of the many of 
             </p>
@@ -78,7 +78,7 @@ export default function Projects() {
             <motion.div 
               key={index}
               // style={{ opacity: rightFade }}
-              className="justify-center items-center h-[850px] mt-20 bg-amber-500"
+              className="justify-center items-center h-[850px] mt-20"
             >
               <Card className="flex-shrink-0 w-[900px] sm:w-[1400px] sm:h-[900px] mx-10 sm-mx-25 overflow-hidden justify">
                 <div className="relative overflow-hidden">
