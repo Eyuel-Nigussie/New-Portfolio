@@ -23,7 +23,7 @@ export default function Contact() {
       viewport={{ once: true }}
     >
       <div className="w-full h-[50vh] z-20">
-          <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 justify-self-start">Contact Me</h1>
+          <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 ">Contact Me</h1>
 
           <div className="flex flex-col sm:flex-row items-center justify-center w-full h-full gap-12">
             {/* Left Section */}
@@ -37,7 +37,7 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center gap-3 text-3xl sm:text-6xl font-light">
-                    @eyuel_31
+                   Telegram@eyuel_31
                     <motion.div animate={{ rotate: hoveredUsername ? 45 : 0 }} transition={{ duration: 0.3 }}>
                       <Send className="w-6 h-6 sm:w-12 sm:h-12 opacity-60" />
                     </motion.div>

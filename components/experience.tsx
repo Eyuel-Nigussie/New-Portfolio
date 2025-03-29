@@ -22,37 +22,37 @@ export default function Experience() {
     className="scroll-mt-28 mb-28 sm:mb-40 py-20"
     id="experience"
   >
-    
-<h1 className="text-5xl font-bold mb-2"> MY EXPERIENCE </h1>
+
+<h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 justify-self-start">My Experiences</h1>
 <VerticalTimeline
   className={theme === "dark" ? "vertical-timeline--dark" : ""}
-  lineColor={theme === "dark" ? "#333" : "#000000"} // White for dark mode, black for light mode
+  lineColor= "#333" // White for dark mode, black for light mode
 >
   {experiencesData.map((item, index) => (
     <React.Fragment key={index}>
       <VerticalTimelineElement
         contentStyle={{
-          background: theme === "dark" ? "#333" : "#f9f9f9",
-          color: theme === "dark" ? "#fff" : "#000",
+          background: "#333",
+          color: "#fff",
           boxShadow: "none",
           textAlign: "left",
           padding: 0, // Remove padding to ensure GlowCard fills the element
         }}
         contentArrowStyle={{
-          borderRight: theme === "dark" ? "7px solid #555" : "7px solid #f9f9f9",
+          borderRight: "7px solid #555",
         }}
         date={item.date}
         icon={item.icon}
       >
         {/* Apply Glow Effect to the entire content */}
         <GlowCard className="p-6">
-          <h3 className="font-semibold capitalize text-black dark:text-white">
+          <h3 className="font-semibold capitalize text-white">
             {item.title}
           </h3>
-          <p className="font-normal !mt-0 text-gray-700 dark:text-gray-300">
+          <p className="font-normal !mt-0text-gray-300">
             {item.location}
           </p>
-          <p className="!mt-1 !font-normal text-gray-700 dark:text-gray-300">
+          <p className="!mt-1 !font-normal text-gray-300">
             {item.description}
           </p>
         </GlowCard>

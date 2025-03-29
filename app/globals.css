@@ -1,5 +1,10 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+/* body {
+    padding:0%;
+    margin: 0%;
+} */
 
 html {
     --line-color: #226bfcb0;
@@ -8,8 +13,8 @@ html {
 }
 
 
-html.dark {
+/* html.dark {
     --line-color: rgba(99, 36, 36, 0.493);
-  }
+  } */
 
 

@@ -44,6 +44,14 @@ export const experiencesData = [
     date: "2021",
   },
   {
+    title: "MSc Artificial Intelligence",
+    location: "Addis Ababa, Ethiopia",
+    description:
+      "Pursuing a Master’s degree in Artificial Intelligence at Addis Ababa University, focusing on machine learning, deep learning, and AI-driven solutions. Engaging in research and practical applications to develop innovative AI models and contribute to the growing field of artificial intelligence.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2023 - Present",
+  },
+  {
     title: "Front-End Developer @ SupportEducation",
     location: "Addis Ababa, Ethiopia",
     description:
@@ -71,23 +79,23 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+      "",
     tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
     imageUrl: corpcommentImg,
   },
   {
-    title: "rmtDev",
+    title: "",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+      "",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+      "",
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
   },
@@ -99,12 +107,16 @@ export const skillsData = [
   "JavaScript",
   "TypeScript",
   "React",
+  "Vue",
+  "Nuxt.js",
   "Next.js",
   "Node.js",
+  "Svelte",
   "Git",
   "Tailwind",
   "Prisma",
   "MongoDB",
+  "Supabase",
   "Redux",
   "GraphQL",
   "Apollo",
@@ -113,4 +125,6 @@ export const skillsData = [
   "Python",
   "Django",
   "Framer Motion",
+  "Rive",
+  "Three.js",
 ] as const;

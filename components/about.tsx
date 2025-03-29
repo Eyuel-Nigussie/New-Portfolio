@@ -1,13 +1,11 @@
 'use client';
 
 import React from 'react';
-import SectionHeading from './section-heading';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/lib/hooks';
 import Image from 'next/image';
 import TechStack from '@/components/TechStack';
 
-// You'll need to define the CheckIcon component (or import from a library)
 function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -33,74 +31,61 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="h-screen flex flex-col sm:flex-row items-center justify-center px-6 sm:px-16 lg:px-24 text-white"
+      className="h-auto min-h-screen flex flex-col-reverse sm:flex-row items-center justify-center px-5 sm:px-16 lg:px-24 text-white"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <div className="relative w-full sm:w-1/2 flex justify-center">
+      {/* Text Section */}
+      <div className="w-full sm:w-1/2 text-center sm:text-left mt-8 sm:mt-0">
+        <h1 className="text-4xl sm:text-8xl font-extrabold py-6 sm:py-10 text-start">
+          About Me
+        </h1>
+        <p className="text-base sm:text-lg text-white/60 leading-relaxed">
+          With 4+ years of experience in web and app development, I specialize in full-stack engineering with a strong emphasis on front-end development. My true passion lies in crafting immersive, visually stunning interfaces that blend aesthetic elegance with seamless functionality.
+        </p>
+        <p className="text-base sm:text-lg leading-relaxed text-white/60 mt-4">
+          I take a detail-oriented, performance-driven approach to development, ensuring that every component—from UI animations to API integrations—enhances the overall user experience.
+        </p>
+
+        <div className="space-y-4 text-white/60 mt-6">
+          <p className="text-base font-semibold">My expertise spans:</p>
+
+          <ul className="space-y-3 text-white/60">
+            {[
+              ['Front-End Development', 'Crafting responsive, accessible interfaces with modern web technologies'],
+              ['Back-End Development', 'Building scalable server-side architectures and robust APIs'],
+              ['Full-Stack Engineering', 'Designing complete systems with seamless front-to-back integration'],
+              ['Application Development', 'Delivering cross-platform solutions for web and mobile environments'],
+              ['UI/UX Focus', 'Bridging aesthetic design with intuitive user experiences'],
+            ].map(([title, description]) => (
+              <li key={title} className="flex items-start">
+                <CheckIcon className="w-4 sm:w-5 h-4 sm:h-5 text-green-500 mr-2 flex-shrink-0" />
+                <p>
+                  <span className="font-medium">{title}</span> – {description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="text-base sm:text-lg leading-relaxed text-white/60 mt-4">
+          I live for turning complex problems into elegant solutions—whether it’s a zero-lag SaaS dashboard, a data-intensive web app, or a native-feeling mobile experience.
+        </p>
+
+        <TechStack />
+      </div>
+
+      {/* Image Section */}
+      <div className="relative w-full sm:w-1/2 flex justify-center mt-8 sm:mt-0">
         <Image
           src="/Eyuel.png"
           alt="Eyuel's Portrait"
           width={500}
           height={500}
-          className="justify-self-center rounded-2xl shadow-lg object-cover w-[80%] sm:w-[90%] max-w-md"
+          className="rounded-2xl shadow-lg object-cover w-[90%] sm:w-[80%] max-w-xs sm:max-w-md"
         />
-      </div>
-      
-      <div className="w-full sm:w-1/2 text-center sm:text-left mt-6 sm:mt-0">
-      <h1 className="text-5xl font-bold mb-2">About Me</h1>
-        <p className="text-lg sm:text-xl leading-relaxed text-gray-300">
-          With 4+ years of experience in web and app development, I specialize in full-stack engineering with a strong emphasis on front-end development. My true passion lies in crafting immersive, visually stunning interfaces that blend aesthetic elegance with seamless functionality.
-        </p>
-        <p className="text-lg sm:text-xl leading-relaxed text-gray-300 mt-4">
-           I take a detail-oriented, performance-driven approach to development, ensuring that every component—from UI animations to API integrations—enhances the overall user experience. While I excel in front-end architecture, I also have deep experience in back-end development, allowing me to build scalable, full-stack applications from the ground up.
-        </p>
-        <div className="space-y-4">
-          <p className="text-lg font-semibold">My expertise spans:</p>
-
-          <ul className="space-y-3">
-            <li className="flex items-start">
-              <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-              <p>
-                <span className="font-medium">Front-End Development</span> – Crafting responsive, accessible interfaces with modern web technologies
-              </p>
-            </li>
-            
-            <li className="flex items-start">
-              <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-              <p>
-                <span className="font-medium">Back-End Development</span> – Building scalable server-side architectures and robust APIs
-              </p>
-            </li>
-            
-            <li className="flex items-start">
-              <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-              <p>
-                <span className="font-medium">Full-Stack Engineering</span> – Designing complete systems with seamless front-to-back integration
-              </p>
-            </li>
-            
-            <li className="flex items-start">
-              <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-              <p>
-                <span className="font-medium">Application Development</span> – Delivering cross-platform solutions for web and mobile environments
-              </p>
-            </li>
-            
-            <li className="flex items-start">
-              <CheckIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-              <p>
-                <span className="font-medium">UI/UX Focus</span> – Bridging aesthetic design with intuitive user experiences
-              </p>
-            </li>
-          </ul>
-        </div>
-        <p className="text-lg sm:text-xl leading-relaxed text-gray-300 mt-4">
-          I live for turning complex problems into elegant solutions—whether it’s a zero-lag SaaS dashboard, a data-intensive web app, or a native-feeling mobile experience.
-        </p>
-        <TechStack />
       </div>
     </motion.section>
   );

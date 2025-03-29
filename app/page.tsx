@@ -11,6 +11,7 @@ import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import Loading from '@/app/loading';
 import Testimonial from '@/components/testimonial';
+import Articles from '@/components/articles';
 
 export default function Home() {
   const { theme } = useTheme();
@@ -73,7 +74,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
       {/* Sky background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#607d99] to-[#3173a8] dark:from-[#1f1e1e] dark:to-[#1f1e1e] transition-colors duration-700 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1f1e1e] to-[#1f1e1e] transition-colors duration-700 -z-10" />
 
       {/* Stars (only visible in dark mode) */}
       <div className="absolute inset-0">
@@ -85,14 +86,14 @@ export default function Home() {
               top: star.top,
               left: star.left,
               animationDelay: star.delay,
-              opacity: theme === "dark" ? 1 : 0,
+              opacity: 1,
               transition: "opacity 0.7s ease-in-out",
             }}
           />
         ))}
 
         {/* Clouds (only visible in light mode) */}
-        <div className="absolute inset-0 transition-opacity duration-700 dark:opacity-0">
+        <div className="absolute inset-0 transition-opacity duration-700 opacity-0">
           {clouds.map((cloud, i) => (
             <div
               key={i}
@@ -118,6 +119,7 @@ export default function Home() {
       <Experience />
       {/* <SectionDivider /> */}
       <Testimonial />
+      <Articles />
       <Contact />
       
        {/* Animated line */}

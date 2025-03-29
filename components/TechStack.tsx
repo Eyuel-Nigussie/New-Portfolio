@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 
 const technologies = [
   {
+    name: "Figma",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+  },
+  {
     name: "TypeScript",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
   },
@@ -51,7 +55,7 @@ const technologies = [
   {
     name: "Docker",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-  }
+  },  
 ];
 
 export default function TechStack() {
@@ -65,7 +69,7 @@ export default function TechStack() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            className={`rounded-lg p-2 flex items-center justify-center hover:shadow-md transition-all duration-200 hover:-translate-y-0.5`}
+            className={`rounded-lg p-1 flex items-center justify-center hover:shadow-md transition-all duration-200 hover:-translate-y-0.5`}
             style={{ width: '3.5rem', height: '3.5rem' }} // Fixed size for all logos
             title={tech.name} // Tooltip on hover
           >

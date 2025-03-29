@@ -11,8 +11,8 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ricardo | Personal Portfolio",
-  description: "Ricardo is a full-stack developer with 8 years of experience.",
+  title: "Eyuel | Personal Portfolio",
+  description: "Hi, I'm Eyuel, a full-stack software developer with 8 years of experience, specializing in creating interactive and elegant functional applications.",
 };
 
 export default function RootLayout({
@@ -23,16 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true} className="!scroll-smooth min-h-screen relative">
       <body
-        className={`${inter.className}text-gray-950 relative p-0 m-0 dark:text-gray-50 dark:text-opacity-90`}
+        className={`relative p-0 m-0 text-gray-50 text-opacity-90`}
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
             <Header />
             {children}
-            <Footer />
+            {/* <Footer /> */}
 
             <Toaster position="top-right" />
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

@@ -6,38 +6,28 @@ import { Card } from "@/components/card";
 import { ExternalLink, Github } from "lucide-react";
 import { useSectionInView } from '@/lib/hooks';
 
+
 const projects = [
   {
-    title: "Project One",
-    description: "Real-time collaboration tool for remote teams",
-    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2425&auto=format&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["React", "Socket.io", "Node.js"]
+    title: "Amref's Inventory Managemnt System",
+    image: "/images/project images/amref ims.png",
+    demo: "https://docs.google.com/presentation/d/19S-FhFIhYXl4kNHoPo68tLeX8wHekIZ2/edit?usp=sharing&ouid=103686413890524656065&rtpof=true&sd=true",
   },
   {
-    title: "Project Two",
-    description: "AI-powered content management system",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2424&auto=format&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["OpenAI", "Next.js", "MongoDB"]
+    title: "WAI Ethiopia ",
+    image: "/images/project images/wash.png",
+    demo: "https://wai-ethiopia.akvotest.org/",
   },
   {
-    title: "Project Three",
-    description: "AI-powered content management system",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2424&auto=format&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["OpenAI", "Next.js", "MongoDB"]
+    title: "Leap, the mLearning platform",
+    image: "/images/project images/leap.png",
+    demo: "https://leap.amref.org/about/",
   },
   {
-    title: "Project Four",
-    description: "AI-powered content management system",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2424&auto=format&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
-    tags: ["OpenAI", "Next.js", "MongoDB"]
+    title: "KAB Towing & Machinary",
+    image: "/images/project images/kab.png",
+    demo: "https://kab-demo-production-server-down.netlify.app",
+
   }
 ];
 
@@ -49,9 +39,7 @@ export default function Projects() {
     offset: ["start start", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
-  const rightFade = useTransform(scrollYProgress, [0, 0.1], [0.95, 1]);
-
+  const x = useTransform(scrollYProgress, [0, 1], ["150%", "-420%"]);
   return (
     <section 
       ref={(el) => {
@@ -65,17 +53,20 @@ export default function Projects() {
           sectionRef(el);
         }
       }}
-      className="h-[300vh] relative py-25 bg-background"
+      className="h-[300vh] relative py-[200px] bg-background"
       id="projects"
     >
-      <div className="sticky top-0 h-screen w-screen flex items-center overflow-hidden">
+      <div className="sticky top-0 h-screen w-screen flex items-center justify-start overflow-hidden">
         <motion.div 
           style={{ x }}
-          className="flex gap-8 px-12 min-w-max pl-[50vw]"
+          className="flex gap-8 px-12 min-w-max pl-[50vh] mt-12"
         >
-          <div className="flex-shrink-0 w-[800px] h-[90vh] flex flex-col justify-center">
-          <h1 className="text-5xl font-bold mb-2">About Me</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+         <div className="flex-shrink-0 w-[300px] sm:w-[900px] h-[90vh] px-4 sm:px-35 flex flex-col justify-center">
+          <p className="text-white/60">
+             Here I showcase some of the many of 
+            </p>
+            <h1 className="text-4xl sm:text-8xl font-extrabold py-8 sm:py-16 text-start">My Projects</h1>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl text-white/60">
               Welcome to my portfolio! Here you'll find a collection of projects that showcase 
               my skills and passion for web development. Each project represents a unique 
               challenge and demonstrates my ability to create innovative solutions using 
@@ -86,37 +77,46 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div 
               key={index}
-              style={{ opacity: rightFade }}
+              // style={{ opacity: rightFade }}
+              className="justify-center items-center h-[900px] mt-10"
             >
-              <Card className="flex-shrink-0 w-[800px] h-[90vh] overflow-hidden bg-card">
-                <div className="relative h-[50%] overflow-hidden">
+              <Card className="flex-shrink-0 w-[900px] sm:w-[1400px] sm:h-[900px] mx-10 sm-mx-25 overflow-hidden justify">
+                <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+                    className="object-cover w-full h-[400px] sm:h-[800px] transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                <div className="p-8 h-[50%] flex flex-col">
-                  <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                  <p className="text-muted-foreground mb-6 text-lg flex-grow">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex}
-                        className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
+                <div className="h-[10%] flex flex-row items-center justify-between">
+                      <a 
+                        href={project.demo} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:underline"
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                  </div>
+                        <h3 className="text-3xl font-bold">{project.title}</h3>
+                        <ExternalLink className="h-5 w-5 text-white/70" />
+                      </a>
                 </div>
               </Card>
             </motion.div>
           ))}
         </motion.div>
+        <div className="flex-shrink-0 w-[90spx] h-[90vh] px-15 flex flex-col justify-center">
+          <p className="text-white/60">
+             Here I showcase some of the many of 
+            </p>
+          <h1 className="text-8xl font-extrabold mb-2">My Projects</h1>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl text-white/60">
+              Welcome to my portfolio! Here you'll find a collection of projects that showcase 
+              my skills and passion for web development. Each project represents a unique 
+              challenge and demonstrates my ability to create innovative solutions using 
+              modern technologies.
+            </p>
+          </div>
       </div>
+          
     </section>
   );
 }

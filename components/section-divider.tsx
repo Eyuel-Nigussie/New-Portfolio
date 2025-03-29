@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { GlowCard } from "@/components/glow-card";
 
 // Array of image paths
 const logos = [
@@ -35,36 +36,40 @@ const SectionDivider = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-6 dark:bg-white/30 bg-gray-800/25">
-      {/* Gradient overlays for fade effect */}
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white/20 dark:from-black/25 to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white/10 dark:from-black/20 to-transparent z-10" />
+    <GlowCard>
+      <div className="relative w-full overflow-hidden bg-white/30">
+            {/* Gradient overlays for fade effect */}
+          <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black/25 to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 sm:w-24 w-12 bg-gradient-to-l from-black/20 to-transparent z-10" />
 
-      <motion.div
-        ref={carouselRef}
-        className="flex items-center gap-16"
-        animate={{
-          x: [0, -carouselWidth], // Move from start to end
-        }}
-        transition={{
-          ease: "linear",
-          duration: 20, // Adjust for smooth movement
-          repeat: Infinity,
-        }}
-      >
-        {extendedLogos.map((logo, index) => (
-          <div key={index} className="flex-shrink-0">
-            <Image
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              width={150} // Standardize width
-              height={75} // Standardize height
-              className="object-contain"
-            />
-          </div>
-        ))}
-      </motion.div>
-    </div>
+
+
+        <motion.div
+          ref={carouselRef}
+          className="flex items-center gap-8 sm:gap-16"
+          animate={{
+            x: [0, -carouselWidth], // Move from start to end
+          }}
+          transition={{
+            ease: "linear",
+            duration: 20, // Adjust for smooth movement
+            repeat: Infinity,
+          }}
+        >
+          {extendedLogos.map((logo, index) => (
+            <div key={index} className="flex-shrink-0">
+              <Image
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                width={150} // Default for larger screens
+                height={75}
+                className="object-contain sm:w-[150px] w-[100px] sm:h-[75px] h-[50px]"
+              />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </GlowCard>
   );
 };
 

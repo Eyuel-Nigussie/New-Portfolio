@@ -6,33 +6,26 @@ import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
-    text: "Working with this team was an absolute pleasure. Their attention to detail and innovative approach to problem-solving exceeded our expectations.",
-    author: "Sarah Johnson",
-    position: "CTO at TechCorp",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop",
+    text: "He is one of the hardest and most dedicated workers I've managed. Always punctual, diligent, and efficient, he consistently delivers high-quality work. I highly recommend him for any project or role.",
+    author: " Bekalu Assamnew",
+    position: "Digital learning technical lead at AMREF",
+    image: "/testimonials/bekalu.png",
     profile: "https://linkedin.com/in/sarahjohnson"
   },
   {
-    text: "The level of creativity and technical expertise they brought to our project was outstanding. They delivered beyond our expectations.",
-    author: "Michael Chen",
-    position: "Founder of StartupX",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop",
-    profile: "https://twitter.com/michaelchen"
+    text: "Working with Eyuel Nigussie on a recent project was a fantastic experience. He seamlessly integrated my design ideas with his technical skills, ensuring the final product was both visually appealing and functional. Eyuel's clean, efficient approach and attention to detail stood out. I highly recommend him for any web development or design project—his professionalism and dedication are exceptional!",
+    author: "Olivia Bradley",
+    position: "UI/UX Designer",
+    image: "/testimonials/olivia.png",
+    profile: "https://www.linkedin.com/in/olivia-bradley-543676284/"
   },
   {
-    text: "Their ability to understand our vision and translate it into reality was remarkable. The end result was exactly what we needed.",
-    author: "Emily Rodriguez",
-    position: "Design Director",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2787&auto=format&fit=crop",
-    profile: "https://behance.net/emilyrodriguez"
+    text: "Absolutely incredible experience. He exceeded my expectations in every way possible.",
+    author: "Samuel Girma",
+    position: "Wash SDG Project Manager",
+    image: "/testimonials/samuel.png",
+    profile: "https://t.me/+251911964592"
   },
-  {
-    text: "Absolutely incredible experience. They exceeded my expectations in every way possible.",
-    author: "David Williams",
-    position: "CEO at CreativeTech",
-    image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=2787&auto=format&fit=crop",
-    profile: "https://dribbble.com/davidwilliams"
-  }
 ];
 
 export default function Testimonials() {
@@ -49,11 +42,8 @@ export default function Testimonials() {
   return (
     <section className="min-h-screen py-25 bg-background relative overflow-hidden" id="testimonials">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center mb-12">
-          <Quote className="w-12 h-12 text-primary/20 mb-6" />
-          <h2 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-            What People Say
-          </h2>
+        <div className=" sm-justify-items-start inline">
+          <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 text-start"> <Quote className="w-12 h-12 text-primary/20 mb-6 inline" /> Testimonials</h1>
         </div>
 
         {/* Testimonials Carousel */}
@@ -67,7 +57,7 @@ export default function Testimonials() {
 
           <div className="w-full max-w-4xl flex justify-center gap-8 overflow-hidden">
             <AnimatePresence mode="wait">
-              {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, index) => (
+                {testimonials.slice(currentIndex, currentIndex + (window.innerWidth < 768 ? 1 : 2)).map((testimonial, index) => (
                 <motion.div
                   key={testimonial.author}
                   initial={{ opacity: 0, y: 20 }}
