@@ -3,13 +3,13 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card } from "@/components/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useSectionInView } from '@/lib/hooks';
-
+import Image from 'next/image';
 
 const projects = [
   {
-    title: "Amref's Inventory Managemnt System",
+    title: "Amref&#39;s Inventory Managemnt System",
     image: "/images/project images/amref ims.png",
     demo: "https://docs.google.com/presentation/d/19S-FhFIhYXl4kNHoPo68tLeX8wHekIZ2/edit?usp=sharing&ouid=103686413890524656065&rtpof=true&sd=true",
   },
@@ -82,7 +82,7 @@ export default function Projects() {
             >
               <Card className="flex-shrink-0 w-[900px] sm:w-[1400px] sm:h-[900px] mx-10 sm-mx-25 overflow-hidden justify">
                 <div className="relative overflow-hidden">
-                  <img 
+                  <Image 
                     src={project.image} 
                     alt={project.title}
                     className="object-cover w-full h-[400px] sm:h-[800px] transition-transform duration-300 hover:scale-105"
@@ -109,7 +109,7 @@ export default function Projects() {
             </p>
           <h1 className="text-8xl font-extrabold mb-2">My Projects</h1>
             <p className="text-muted-foreground leading-relaxed max-w-2xl text-white/60">
-              Welcome to my portfolio! Here you'll find a collection of projects that showcase 
+              Welcome to my portfolio! Here you&#39;ll find a collection of projects that showcase 
               my skills and passion for web development. Each project represents a unique 
               challenge and demonstrates my ability to create innovative solutions using 
               modern technologies.

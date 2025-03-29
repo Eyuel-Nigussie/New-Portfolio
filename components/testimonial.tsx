@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Quote, ArrowLeft, ArrowRight } from "lucide-react";
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -70,7 +71,7 @@ export default function Testimonials() {
                     "{testimonial.text}"
                   </p>
                   <div className="flex items-center space-x-4">
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.author}
                       className="w-12 h-12 rounded-full object-cover"

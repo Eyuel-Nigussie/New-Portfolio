@@ -8,14 +8,14 @@ import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 import { motion } from "framer-motion";
-import Loading from '@/app/loading';
+// import Loading from '@/app/loading';
 import Testimonial from '@/components/testimonial';
 import Articles from '@/components/articles';
 
 export default function Home() {
   const [stars, setStars] = useState<{ top: string; left: string; delay: string }[]>([]);
   const [clouds, setClouds] = useState<{ width: string; height: string; top: string; left: string; delay: string }[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [showLine, setShowLine] = useState(false); // after loading
 
   // Generate stars and clouds on mount
@@ -46,7 +46,7 @@ export default function Home() {
   
     const timer = setTimeout(() => {
       if (isMounted) {
-        setIsLoading(false);
+        // setIsLoading(false);
         setShowLine(true);
       }
     }, 1000);

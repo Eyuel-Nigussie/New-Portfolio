@@ -38,7 +38,7 @@ export default function Intro() {
             animate={{ opacity: 1, y: 0 }}
           >
             <p className="text-base sm:text-lg text-gray-300 mt-8 sm:mt-32">
-              Hey, I'm
+              Hey, I&#39;m
             </p>
             <h1 className="text-3xl sm:text-8xl font-extrabold py-4 sm:py-8 text-start">
               Eyuel Nigussie

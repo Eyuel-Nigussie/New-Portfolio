@@ -4,7 +4,7 @@ import React from "react";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import { GlowCard } from "@/components/glow-card";
+// import { GlowCard } from "@/components/glow-card";
 
 const fadeInAnimationVariants = {
   initial: {

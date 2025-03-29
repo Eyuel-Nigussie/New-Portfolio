@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import Image from 'next/image';
 const technologies = [
   {
     name: "Figma",
@@ -74,7 +74,7 @@ export default function TechStack() {
             title={tech.name} // Tooltip on hover
           >
             <div className="w-8 h-8 relative">
-              <img
+              <Image
                 src={tech.logo}
                 alt={tech.name}
                 className="w-full h-full object-contain"
