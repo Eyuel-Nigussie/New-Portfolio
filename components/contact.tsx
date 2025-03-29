@@ -16,9 +16,9 @@ export default function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="w-ful px-2 sm:px-8"
+      className="w-full h-[1000px] px-2 sm:px-8"
     >
-      <div className="w-full h-full mt-12 pt-12">
+      <div className="w-full mt-12 pt-12">
           <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 flex justify-self-start">Contact Me</h1>
 
           <div className="flex flex-col sm:flex-row items-center justify-center w-full h-full gap-8">
@@ -78,21 +78,19 @@ export default function Contact() {
                 </motion.p>
               </div>
 
-                {/* Right Side - Rive Animation */}
-                  <motion.div 
-                    className="relative h-full w-full pb-12 rounded-2xl overflow-hidden"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <Rive 
-                      src="/robot.riv"
-                      stateMachines="State Machine 1"
-                      className="w-full h-full object-cover rounded-2xl"
-                    />
-                    {/* Gradient Overlay */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" /> */}
-                  </motion.div>
+               {/* Right Side - Rive Animation */}
+            <motion.div
+              className="relative w-full rounded-2xl overflow-hidden h-64 sm:h-96 md:h-[500px] lg:h-[600px]"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Rive
+                src="/robot.riv"
+                stateMachines="State Machine 1"
+                style={{ width: "100%", height: "50%" }}
+              />
+            </motion.div>
            </div>
 
           {/* Copyright */}
