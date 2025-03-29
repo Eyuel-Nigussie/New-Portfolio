@@ -36,10 +36,10 @@ export default function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start center", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["150%", "-420%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["350%", "-720%"]);
   return (
     <section 
       ref={(el) => {
@@ -56,10 +56,10 @@ export default function Projects() {
       className="h-[300vh] relative py-[200px] bg-background"
       id="projects"
     >
-      <div className="sticky top-0 h-screen w-screen flex items-center justify-start overflow-hidden">
+      <div className="sticky top-0 h-screen w-screen flex items-center justify-start overflow-hidden mt-28 pt-48 sm:pt-32 ">
         <motion.div 
           style={{ x }}
-          className="flex gap-8 px-12 min-w-max pl-[50vh] mt-12"
+          className="flex gap-8 px-12 min-w-max"
         >
          <div className="flex-shrink-0 w-[300px] sm:w-[900px] h-[90vh] px-4 sm:px-35 flex flex-col justify-center">
           <p className="text-white/60">
@@ -78,14 +78,17 @@ export default function Projects() {
             <motion.div 
               key={index}
               // style={{ opacity: rightFade }}
-              className="justify-center items-center h-[900px] mt-10"
+              className="justify-center items-center h-[850px] mt-20 bg-amber-500"
             >
               <Card className="flex-shrink-0 w-[900px] sm:w-[1400px] sm:h-[900px] mx-10 sm-mx-25 overflow-hidden justify">
                 <div className="relative overflow-hidden">
                   <Image 
                     src={project.image} 
                     alt={project.title}
+                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 600px, (max-width: 1024px) 700px, 900px"
                     className="object-cover w-full h-[400px] sm:h-[800px] transition-transform duration-300 hover:scale-105"
+                    width={700}
+                    height={200}
                   />
                 </div>
                 <div className="h-[10%] flex flex-row items-center justify-between">

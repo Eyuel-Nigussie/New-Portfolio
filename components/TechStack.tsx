@@ -77,6 +77,8 @@ export default function TechStack() {
               <Image
                 src={tech.logo}
                 alt={tech.name}
+                width={8}
+                height={8}
                 className="w-full h-full object-contain"
                 loading="lazy" // Lazy loading for better performance
               />

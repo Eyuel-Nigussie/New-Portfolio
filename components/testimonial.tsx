@@ -58,7 +58,7 @@ export default function Testimonials() {
 
           <div className="w-full max-w-4xl flex justify-center gap-8 overflow-hidden">
             <AnimatePresence mode="wait">
-                {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial) => (
+                {testimonials.slice(currentIndex, currentIndex + 1).map((testimonial) => (
                 <motion.div
                   key={testimonial.author}
                   initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,9 @@ export default function Testimonials() {
                     <Image
                       src={testimonial.image}
                       alt={testimonial.author}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="rounded-full object-cover"
+                      width={12}
+                      height={12}
                     />
                     <div>
                       <h4 className="font-semibold text-primary">{testimonial.author}</h4>
