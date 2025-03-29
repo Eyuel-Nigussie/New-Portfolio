@@ -7,76 +7,62 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
-import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import Loading from '@/app/loading';
 import Testimonial from '@/components/testimonial';
 import Articles from '@/components/articles';
 
 export default function Home() {
-  const { theme } = useTheme();
   const [stars, setStars] = useState<{ top: string; left: string; delay: string }[]>([]);
   const [clouds, setClouds] = useState<{ width: string; height: string; top: string; left: string; delay: string }[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [showLine, setShowLine] = useState(false);// after loading
+  const [showLine, setShowLine] = useState(false); // after loading
 
-    // Delayed Loading Effect (3 seconds)
-    // useEffect(() => {
-    //   const timer = setTimeout(() => {
-    //     setIsLoading(false);
-    //   }, 1000);
-
-    //   return () => clearTimeout(timer); // Cleanup timeout on unmount
-    // }, []);
-
-    // Ensure random elements are only created on the client to avoid hydration mismatch
-    useEffect(() => {
-      if (typeof window !== "undefined") {
-            // Generate stars data
-            const generatedStars = Array.from({ length: 100 }, () => ({
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              delay: `${Math.random() * 5}s`,
-            }));
-            setStars(generatedStars);
-
-          // Generate clouds data
-          const generatedClouds = Array.from({ length: 6 }, () => ({
-            width: `${Math.random() * 200 + 100}px`,
-            height: `${Math.random() * 60 + 40}px`,
-            top: `${Math.random() * 60}%`,
-            left: `${Math.random() * 100}%`,
-            delay: `${Math.random() * 10}s`,
-        }));
-          setClouds(generatedClouds);
-      }//end of if clause
-    }, []);//end of useEffect
-
-  //anim after loading
+  // Generate stars and clouds on mount
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      setShowLine(true);
-    }, 1000);
+    if (typeof window !== "undefined") {
+      setStars(
+        Array.from({ length: 100 }, () => ({
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+          delay: `${Math.random() * 5}s`,
+        }))
+      );
 
-    return () => clearTimeout(timer);
+      setClouds(
+        Array.from({ length: 6 }, () => ({
+          width: `${Math.random() * 200 + 100}px`,
+          height: `${Math.random() * 60 + 40}px`,
+          top: `${Math.random() * 60}%`,
+          left: `${Math.random() * 100}%`,
+          delay: `${Math.random() * 10}s`,
+        }))
+      );
+    }
   }, []);
 
-
-  // Show loading screen while waiting
-  // if (isLoading) {
-  //   return (
-  //     <div className="flex h-screen items-center justify-center text-xl">
-  //      <Loading />
-  //     </div>
-  //   );
-  // }
+  useEffect(() => {
+    let isMounted = true;
+  
+    const timer = setTimeout(() => {
+      if (isMounted) {
+        setIsLoading(false);
+        setShowLine(true);
+      }
+    }, 1000);
+  
+    return () => {
+      isMounted = false; // Prevent state updates if unmounted
+      clearTimeout(timer);
+    };
+  }, []);
+  
   return (
-    <main className="flex flex-col items-center px-4">
-      {/* Sky background with gradient */}
+    <>
+      {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1f1e1e] to-[#1f1e1e] transition-colors duration-700 -z-10" />
 
-      {/* Stars (only visible in dark mode) */}
+      {/* Stars */}
       <div className="absolute inset-0">
         {stars.map((star, i) => (
           <div
@@ -91,49 +77,49 @@ export default function Home() {
             }}
           />
         ))}
-
-        {/* Clouds (only visible in light mode) */}
-        <div className="absolute inset-0 transition-opacity duration-700 opacity-0">
-          {clouds.map((cloud, i) => (
-            <div
-              key={i}
-              className="absolute bg-white rounded-full animate-float opacity-90"
-              style={{
-                width: cloud.width,
-                height: cloud.height,
-                top: cloud.top,
-                left: cloud.left,
-                animationDelay: cloud.delay,
-                filter: "blur(8px)",
-              }}
-            />
-          ))}
-        </div>
       </div>
-      {/* <Loading /> */}
-      <Intro />
-      <SectionDivider />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-      {/* <SectionDivider /> */}
-      <Testimonial />
-      <Articles />
-      <Contact />
-      
-       {/* Animated line */}
-       {showLine && (
+
+      {/* Clouds */}
+      <div className="absolute inset-0 transition-opacity duration-700 opacity-0">
+        {clouds.map((cloud, i) => (
+          <div
+            key={i}
+            className="absolute bg-white rounded-full animate-float opacity-90"
+            style={{
+              width: cloud.width,
+              height: cloud.height,
+              top: cloud.top,
+              left: cloud.left,
+              animationDelay: cloud.delay,
+              filter: "blur(8px)",
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Animated Line - Now spans entire page height */}
+      {showLine && (
         <motion.div
           initial={{ y: "100vh" }}
-          animate={{ y: "-100vh" }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="absolute left-0 w-full h-1 bg-white/10 blur-sm"
-          style={{ boxShadow: "0 0 90px 20px rgba(59, 130, 246, 0.5)" }}
+          animate={{ y: "-300vh" }} // Moves across full page height
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute left-0 w-full h-3 bg-white blur-sm z-50"
+          style={{ boxShadow: "0 0 90px 20px rgba(59, 130, 246, 0.5)", height: "300vh" }}
         />
       )}
-      
-    </main>
-    
+
+      {/* Main Content */}
+      <main className="flex flex-col items-center px-4 relative z-10">
+        <Intro />
+        <SectionDivider />
+        <About />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Testimonial />
+        <Articles />
+        <Contact />
+      </main>
+    </>
   );
 }

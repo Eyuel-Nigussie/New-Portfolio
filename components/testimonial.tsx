@@ -57,7 +57,7 @@ export default function Testimonials() {
 
           <div className="w-full max-w-4xl flex justify-center gap-8 overflow-hidden">
             <AnimatePresence mode="wait">
-                {testimonials.slice(currentIndex, currentIndex + (window.innerWidth < 768 ? 1 : 2)).map((testimonial, index) => (
+                {testimonials.slice(currentIndex, currentIndex + 2).map((testimonial, index) => (
                 <motion.div
                   key={testimonial.author}
                   initial={{ opacity: 0, y: 20 }}

@@ -37,7 +37,7 @@ const SectionDivider = () => {
 
   return (
     <GlowCard>
-      <div className="relative w-full overflow-hidden bg-white/30">
+      <div className="relative w-full overflow-hidden bg-white/30 p-2 ">
             {/* Gradient overlays for fade effect */}
           <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black/25 to-transparent z-10" />
           <div className="absolute inset-y-0 right-0 sm:w-24 w-12 bg-gradient-to-l from-black/20 to-transparent z-10" />
