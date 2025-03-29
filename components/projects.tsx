@@ -67,7 +67,7 @@ export default function Projects() {
             </p>
             <h1 className="text-4xl sm:text-8xl font-extrabold py-8 sm:py-16 text-start">My Projects</h1>
             <p className="text-muted-foreground leading-relaxed max-w-2xl text-white/60">
-              Welcome to my portfolio! Here you'll find a collection of projects that showcase 
+              Welcome to my portfolio! Here you&#39;ll find a collection of projects that showcase 
               my skills and passion for web development. Each project represents a unique 
               challenge and demonstrates my ability to create innovative solutions using 
               modern technologies.
