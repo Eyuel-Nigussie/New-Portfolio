@@ -116,8 +116,8 @@ export default function Home() {
         <Projects />
         <Skills />
         <Experience />
-        <Testimonial />
         <Articles />
+        <Testimonial />
         <Contact />
       </main>
     </>

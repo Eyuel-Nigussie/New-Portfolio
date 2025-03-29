@@ -13,19 +13,15 @@ export default function Contact() {
   const [hoveredUsername, setHoveredUsername] = useState(false);
 
   return (
-    <motion.section
+    <section
       id="contact"
       ref={ref}
-      className="w-ful h-[80vh] text-center z-20 px-2 sm:px-8"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
+      className="w-ful px-2 sm:px-8"
     >
-      <div className="w-full h-[50vh] z-20">
-          <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 ">Contact Me</h1>
+      <div className="w-full h-full mt-12 pt-12">
+          <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 flex justify-self-start">Contact Me</h1>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center w-full h-full gap-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center w-full h-full gap-8">
             {/* Left Section */}
             <div className="flex-1 flex flex-col items-center sm:items-start px-4 sm:px-8 text-center sm:text-left">
                 {/* Username */}
@@ -84,7 +80,7 @@ export default function Contact() {
 
                 {/* Right Side - Rive Animation */}
                   <motion.div 
-                    className="relative h-[600px] w-full rounded-2xl overflow-hidden"
+                    className="relative h-full w-full pb-12 rounded-2xl overflow-hidden"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
@@ -100,8 +96,8 @@ export default function Contact() {
            </div>
 
           {/* Copyright */}
-          <p className="text-xs sm:text-sm text-white/70">Copyright © {new Date().getFullYear()} Eyuel Nigussie 👑</p>
+          <p className="text-xs sm:text-sm text-white/70 ">Copyright © {new Date().getFullYear()} Eyuel Nigussie 👑</p>
       </div>
-    </motion.section>
+    </section>
   );
 }

@@ -45,8 +45,7 @@ export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <main className="min-h-screen bg-background">
-      <section className="py-10 px-4 md:px-6">
+      <section className="min-h-screen bg-background py-10 px-4 md:px-6">
         <motion.div 
           className="max-w-7xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -168,6 +167,5 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-    </main>
   );
 }
