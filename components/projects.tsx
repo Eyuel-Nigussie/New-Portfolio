@@ -85,8 +85,8 @@ export default function Projects() {
                   <Image 
                     src={project.image} 
                     alt={project.title}
-                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 600px, (max-width: 1024px) 700px, 900px"
-                    className="object-cover w-full h-[400px] sm:h-[800px] transition-transform duration-300 hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 600px, (max-width: 1024px) 700px, 900px"
+                    style={{ objectFit: 'cover' }}  
                     width={700}
                     height={200}
                   />
