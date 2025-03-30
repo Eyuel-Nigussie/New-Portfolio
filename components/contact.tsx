@@ -6,6 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import Rive from '@rive-app/react-canvas';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -69,6 +70,10 @@ export default function Contact() {
                     <motion.a href="https://t.me/eyuel_31" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg sm:text-xl hover:text-white transition-colors" whileHover={{ x: 5 }}>
                       <Send className="w-5 h-5 sm:w-6 sm:h-6" /> Telegram
                     </motion.a>
+                    <motion.a href="https://github.com/Eyuel-Nigussie" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-lg sm:text-xl hover:text-white transition-colors" whileHover={{ x: 5 }}>
+                        <FaGithub className="w-5 h-5 sm:w-6 sm:h-6" /> GitHub
+                    </motion.a>
+
                   </div>
                 </div>
 
