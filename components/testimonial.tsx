@@ -7,11 +7,11 @@ import Image from 'next/image';
 
 const testimonials = [
   {
-    text: "He is one of the hardest and most dedicated workers I&#39;ve managed. Always punctual, diligent, and efficient, he consistently delivers high-quality work. I highly recommend him for any project or role.",
+    text: "He is one of the hardest and most dedicated workers I\'ve managed. Always punctual, diligent, and efficient, he consistently delivers high-quality work. I highly recommend him for any project or role.",
     author: " Bekalu Assamnew",
     position: "Digital learning technical lead at AMREF",
     image: "/testimonials/bekalu.png",
-    profile: "https://linkedin.com/in/sarahjohnson"
+    profile: "https://www.linkedin.com/in/bekalu-assamnew-3357142b/"
   },
   {
     text: "Working with Eyuel Nigussie on a recent project was a fantastic experience. He seamlessly integrated my design ideas with his technical skills, ensuring the final product was both visually appealing and functional. Eyuel&#39;s clean, efficient approach and attention to detail stood out. I highly recommend him for any web development or design project—his professionalism and dedication are exceptional!",
