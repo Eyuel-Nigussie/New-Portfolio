@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const projects = [
   {
-    title: "Amref&#39;s Inventory Managemnt System",
+    title: "Amref Inventory Managemnt System",
     image: "/images/project images/amref ims.png",
     demo: "https://docs.google.com/presentation/d/19S-FhFIhYXl4kNHoPo68tLeX8wHekIZ2/edit?usp=sharing&ouid=103686413890524656065&rtpof=true&sd=true",
   },
@@ -59,11 +59,11 @@ export default function Projects() {
       <div className="sticky top-0 h-screen w-screen flex items-center justify-start overflow-hidden mt-28 pt-48 sm:pt-32 ">
         <motion.div 
           style={{ x }}
-          className="flex gap-8 px-12 min-w-max"
+          className="flex gap-5 px-12 min-w-max"
         >
-         <div className="flex-shrink-0 w-[300px] sm:w-[900px] h-[60vh] sm:h-[90vh]  px-4 sm:px-35 flex flex-col justify-center">
+         <div className="flex-shrink-0 w-[300px] sm:w-[900px] h-[60vh] sm:h-[90vh]  px-4 sm:px-35 flex flex-col justify-center align-self-start">
           <p className="text-white/60">
-             Here I showcase some of the many of 
+             Here I showcase some of the mgaany of 
             </p>
             <h1 className="text-4xl sm:text-8xl font-extrabold py-8 sm:py-16 text-start">My Projects</h1>
             <p className="text-muted-foreground leading-relaxed max-w-2xl text-white/60">
@@ -78,9 +78,9 @@ export default function Projects() {
             <motion.div 
               key={index}
               // style={{ opacity: rightFade }}
-              className="justify-center items-center h-[850px] mt-20"
+              className="justify-center items-center w-[500px] sm:w-[900px] h-[850px] mt-20"
             >
-              <Card className="flex-shrink-0 w-[900px] sm:w-[1400px] sm:h-[900px] mx-10 sm-mx-25 overflow-hidden justify">
+              <Card className="flex-shrink-0 w-[400px] sm:w-[900px] sm:h-[900px] overflow-hidden justify">
                 <div className="relative overflow-hidden">
                   <Image 
                     src={project.image} 
@@ -106,7 +106,7 @@ export default function Projects() {
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex-shrink-0 w-[90spx] h-[90vh] px-15 flex flex-col justify-center">
+        {/* <div className="flex-shrink-0 w-[90spx] h-[90vh] px-15 flex flex-col justify-center">
           <p className="text-white/60">
              Here I showcase some of the many of 
             </p>
@@ -117,7 +117,7 @@ export default function Projects() {
               challenge and demonstrates my ability to create innovative solutions using 
               modern technologies.
             </p>
-          </div>
+          </div> */}
       </div>
           
     </section>
