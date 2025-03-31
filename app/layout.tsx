@@ -18,20 +18,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" suppressHydrationWarning={true} className="!scroll-smooth min-h-screen relative">
-      <body
-        className={`relative p-0 m-0 text-gray-50 text-opacity-90`}
-      >
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
+return (
+  <html
+    lang="en"
+    suppressHydrationWarning={true}
+    className="!scroll-smooth min-h-screen w-full overflow-x-hidden relative p-0 m-0"
+  >
+    <body
+      className="relative p-0 m-0 w-full min-h-screen text-gray-50 text-opacity-90 overflow-x-hidden"
+    >
+      <ThemeContextProvider>
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
 
-            {/* <Toaster position="top-right" /> */}
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
-      </body>
-    </html>
-  );
+          {/* <Toaster position="top-right" /> */}
+        </ActiveSectionContextProvider>
+      </ThemeContextProvider>
+    </body>
+  </html>
+);
+
 }
