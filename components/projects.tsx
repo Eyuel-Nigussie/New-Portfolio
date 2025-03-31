@@ -30,14 +30,12 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="bg-background">
-      <div className="container mx-auto px-6">
+      <div className="container  px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white">
-            My Projects
-          </h2>
+       <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 text-start">My Projects</h1>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            A showcase of projects that highlight my skills and passion for web development.
+            A showcase of projects that highlight my skills and passion for Software development.
           </p>
         </div>
 
