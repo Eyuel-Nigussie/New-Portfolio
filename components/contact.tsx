@@ -50,7 +50,7 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center gap-3 text-2xl sm:text-6xl font-light break-words">
-                    Gmail@eyuelnigussie.com
+                    Gmail@eyuelnigussie@gmail.com
                     <motion.div animate={{ y: hoveredEmail ? -10 : 0 }} transition={{ duration: 0.3 }}>
                       <MessageSquare className="w-6 h-6 sm:w-12 sm:h-12 opacity-60" />
                     </motion.div>
