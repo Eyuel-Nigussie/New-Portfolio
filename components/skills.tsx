@@ -27,7 +27,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="h-[60vh] -mb-10 max-w-[60rem] py-25 scroll-mt-28 text-center sm:mb-40"
+      className="h-full max-w-[60rem] py-25  text-center mb-40"
     >
       <h1 className="text-5xl sm:text-8xl font-extrabold py-8 sm:py-16 text-start">My Skills</h1>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
