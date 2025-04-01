@@ -65,7 +65,7 @@ export default function Testimonials() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="w-[45%] flex flex-col space-y-6 bg-card p-6 rounded-lg shadow-lg"
+                  className="w-[80%] sm:w-[45%] flex flex-col space-y-6 bg-card p-6 rounded-lg shadow-lg"
                 >
                   <p className="text-xl leading-relaxed text-muted-foreground italic">
                     {testimonial.text}
@@ -75,8 +75,8 @@ export default function Testimonials() {
                       src={testimonial.image}
                       alt={testimonial.author}
                       className="rounded-full object-cover"
-                      width={12}
-                      height={12}
+                      width={45}
+                      height={45}
                     />
                     <div>
                       <h4 className="font-semibold text-primary">{testimonial.author}</h4>
