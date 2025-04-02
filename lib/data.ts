@@ -63,7 +63,7 @@ export const experiencesData = [
     title: "Front-End Developer @ Loga Meter Taxi",
     location: "Addis Ababa",
     description:
-      "As a Front-End Developer 2021at Loga Meter Taxi, I designed and developed user interfaces for a taxi-hailing app using React, Next.js, and SvelteKit. I enhanced the UX with dynamic animations using Framer Motion, managed application state efficiently with Redux, and collaborated with backend teams to integrate APIs, ensuring seamless functionality and a polished user experience.",
+      "As a Front-End Developer at Loga Meter Taxi, I designed and developed user interfaces for a taxi-hailing app using React, Next.js, and SvelteKit. I enhanced the UX with dynamic animations using Framer Motion, managed application state efficiently with Redux, and collaborated with backend teams to integrate APIs, ensuring seamless functionality and a polished user experience.",
     icon: React.createElement(DiJavascript),
     date: "2021 - 2023",
   },
@@ -71,9 +71,17 @@ export const experiencesData = [
     title: "Full-Stack Software Engineer @ Amref Health Africa",
     location: "Addis Ababa, Ethiopia & Nairobi, Kenya",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "As a Full-Stack Developer at Amref Health Africa, I collaborated on various projects—from leading end-to-end development to contributing as part of a team. My work included building an mLearning platform, health-tracking applications, intrability systems, and more.",
     icon: React.createElement(FaReact),
-    date: "2023 - present",
+    date: "2023 - 2025",
+  },
+  {
+    title: "Freelancer & cooking something great( knock on wood )",
+    location: "Worldwide",
+    description:
+      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities. I am also building something great ( Knock on wood )",
+    icon: React.createElement(FaReact),
+    date: "2025 - present",
   },
 ] as const;
 
