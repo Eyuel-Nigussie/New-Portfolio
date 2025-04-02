@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Leap, the mLearning platform",
     image: "/images/project images/leap.png",
-    demo: "https://leap.amref.org/about/",
+    demo: "https://leaphealthmobile.com/",
   },
   {
     title: "KAB Towing & Machinery",
